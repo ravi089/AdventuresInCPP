@@ -111,7 +111,9 @@ class DerivedB : virtual public Base {
             }
 };
 
-// Derived class from both DerivedA and DerivedB
+// Derived class from both DerivedA and DerivedB. This is Diamond Problem as DerivedC
+// would be getting two copies of Base class. Virtual Inheritance Solves This Problem.
+// Virtual Inheritance ensures that DerivedC only gets one copy of Base data variables.
 class DerivedC : public DerivedA, public DerivedB {
     public:
         DerivedC() { cout << "DerivedC constructor called." << endl; }
